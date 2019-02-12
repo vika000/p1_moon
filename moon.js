@@ -40,7 +40,7 @@ function myMoon() {
 
 	ellipse(130, 130, width / 3, a);
 	a = a - 0.5;
-	if (a < 0) {
+	if (a < a {
 		a = height;
 
 		ellipse(130, b, height, b);
