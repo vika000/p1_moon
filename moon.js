@@ -1,30 +1,53 @@
-let rectX = 0;
-let fr = 30; //starting FPS
-let clr;
+
+// function setup() {
+//   createCanvas(1020, 800);
+//   background(64);
+//   noStroke(); //so background doesnt have a box around it
+//   colorMode(HSB);
+
+// }
+
+// function draw() {
+  
+// }
+
+// function moonMan(myX, myY, mySize, myHue, mySat, myAlpha) {
+//   // my moon
+//   let size = (mySize);
+//   let 
+// }
+// UNCOMMENT WITH CMND + /
+
+let a;
+let b;
+
 
 function setup() {
-  background(200);
-  frameRate(fr); // Attempt to refresh at starting FPS
-  clr = color(255, 0, 0);
+	createCanvas(720, 400);
+	stroke(255);
+	a = height / 2;
+	b = width / 2;
+	backCol = 51;
+	ellipseMode(CORNER);
 }
 
 function draw() {
-  background(200);
-  rectX = rectX += 1; // Move Rectangle
+	background(backCol);
+	myMoon();
+}
 
-  if (rectX >= width) {
-   // If you go off screen.
-    if (fr === 30) {
-      clr = color(0, 0, 255);
-      fr = 10;
-      frameRate(fr); // make frameRate 10 FPS
-    } else {
-      clr = color(255, 0, 0);
-      fr = 30;
-      frameRate(fr); // make frameRate 30 FPS
-    }
-    rectX = 0;
-  }
-  fill(clr);
-  rect(rectX, 40, 20, 20);
+function myMoon() {
+
+	ellipse(130, 130, width / 3, a);
+	a = a - 0.5;
+	if (a < 0) {
+		a = height;
+
+		ellipse(130, b, height, b);
+		b = b - 0.5;
+		if (b < 0) {
+			b = width;
+
+		}
+	}
 }
